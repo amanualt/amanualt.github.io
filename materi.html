@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {
+    background-image: url("S1OsrYY.jpg");
+    background-repeat: no-repeat;
+
+    background-position: right top;
+    background-attachment: fixed;
+}
+.button {
+  display: inline-block;
+  border-radius: 4%;
+  background-color: #f4511e;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 30px;
+  padding: 3%;
+  width: 23%;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 2%;
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -10%;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 25%;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+.b{
+  padding-left: 30%;
+  padding-top: 20%;
+}
+a:link, a:visited {
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+</style>
+</head>
+<body>
+<div class="b">
+  <button class="button" style="vertical-align:middle"><a href="presentasi/kubernetes/index.html"><span>Kubernetes </span></a></button>
+  <button class="button" style="vertical-align:middle"><a href="presentasi/virtualisasi/index.html"><span>Virtualisasi </span></a></button>
+</div>
+
+</body>
+</html>
