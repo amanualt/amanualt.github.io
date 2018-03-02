@@ -3,68 +3,37 @@
 <head>
 <style>
 body {
-    background-image: url("S1OsrYY.jpg");
-    background-repeat: no-repeat;
-
-    background-position: right top;
-    background-attachment: fixed;
-}
-.button {
-  display: inline-block;
-  border-radius: 4%;
-  background-color: #f4511e;
-  border: none;
-  color: #FFFFFF;
-  text-align: center;
-  font-size: 30px;
-  padding: 3%;
-  width: 23%;
-  transition: all 0.5s;
-  cursor: pointer;
-  margin: 2%;
-}
-
-.button span {
-  cursor: pointer;
-  display: inline-block;
-  position: relative;
-  transition: 0.5s;
-}
-
-.button span:after {
-  content: '\00bb';
-  position: absolute;
-  opacity: 0;
-  top: 0;
-  right: -10%;
-  transition: 0.5s;
-}
-
-.button:hover span {
-  padding-right: 25%;
-}
-
-.button:hover span:after {
-  opacity: 1;
-  right: 0;
+    background-color: #778899;
 }
 .b{
-  padding-left: 30%;
+  padding-left: 35%;
   padding-top: 20%;
 }
+
 a:link, a:visited {
     color: white;
     text-align: center;
     text-decoration: none;
     display: inline-block;
 }
+a:link, a:visited {
+    background-color: #f44336;
+    color: white;
+    padding: 30px 60px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+
+a:hover, a:active {
+    background-color: red;
+}
 </style>
 </head>
 <body>
 <div class="b">
-  <button class="button" style="vertical-align:middle"><a href="materi.html"><span>Materi </span></a></button>
-  <button class="button" style="vertical-align:middle"><a href="profile/index.html"><span>profile </span></a></button></br>
-  <button class="button" style="vertical-align:middle"><a href="docker/index.html"><span>Docker</span></a></button>
+  <a style="font-size: 20px;" href="materi.html"><span><b>Materi</b></span></a>
+  <a style="font-size: 20px;" href="profile/index.html"><span><b>profile</b></span></a>
 </div>
 
 </body>
