@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Docker Container</title>
+
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Hakim El Hattab">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/black.css" id="theme">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<h1>DOCKER <a>CONTAINER</a></h1>
+					<img
+						src="img/docker-logo.png"
+						alt=""
+						style="background: transparent; border: 0; box-shadow: 0 0 0; width: 500px"
+					/>
+					<p>
+						<small>
+							by <a>Amanu Alatibi</a>
+						</small>
+					</p>
+				</section>
+
+				<section data-background="#eee" data-background-transition="convex">
+					<section>
+						<p>
+							<h2>Apa itu container?</h2>
+						</p>
+					</section>
+					<section>
+						<img
+							src="img/container.png"
+							alt=""
+							style="background: transparent; border: 0; box-shadow: 0 0 0; width: 100px"
+						/>
+						<p>Container merupakan alat untuk mempermudah pengemasan dan mendistribusikan suatu hal dari satu tempat ke tempat lain.</br> Sedangkan dalam konteks lingkungan linux (linux environment), kontainer dapat diartikan sebagai alat yang dapat dipergunakan untuk memberikan sistem yang terisolasi (isolated environment) pada level OS yang dijalankan pada satu induk linux kernel (host).</p>
+					</section>
+				</section>
+
+				<section>
+					<section data-background=" #778899" data-background-transition="fade">
+						<h2>Terus bedanya sama Virtual Machin apa?</h2>
+						<img
+							src="img/imoji-think.png"
+							alt=""
+							style="background: transparent; border: 0; box-shadow: 0 0 0; width: 100px"
+							/>
+					</section>
+					<section data-background=" #778899" >
+						<b>Container</b>
+							<ul>
+								<li>
+									Container lebih efektif dan ringan dibandingkan dengan VM (Virtual Machine).
+								</li>
+								<li>
+									Container dapat melakukan efisiensi resource dengan sebaik - baiknya pada system.
+								</li>
+							</ul>
+					  <p> <b>Virtual Machine</b>
+						 <ul>
+								<li>
+									VM (Virtual Machine) menggunakan seluruh resource yang ada pada host, sedangkan Container hanya menggunakan sedikit resource dari host.
+								</li>
+								<li>
+									VM menggunakan kernel tersendiri yang kemungkinan akan diproses langsung pada host.
+								</li>
+							</ul>
+						</p>
+					</section>
+					<section data-background=" #778899">
+						<img
+							src="img/beda.png"
+							alt=""
+							style="background: transparent; border: 0; box-shadow: 0 0 0; width: 900px"
+							/>
+					</section>
+				</section>
+
+				<section data-background="#3498db">
+					<section>
+						<p><h1>Apa itu docker?</h1></p>
+					</section>
+					<section>
+						<video width="500" controls>
+						  <source src="video/docker.mp4" type="video/mp4">
+						</video>
+					</section>
+					<section>
+						<img
+							src="img/docker-logo.png"
+							alt=""
+							style="background: transparent; border: 0; box-shadow: 0 0 0; width: 100px"
+							/></br>
+						Docker adalah salah satu platform yang dibangun berdasarkan teknologi container.</br> Docker merupakan sebuah project open-source yang menyediakan platform terbuka untuk developer maupun sysadmin.</br> Dengan sangat populernya docker, sebagian orang sering menganggap docker adalah sebutan lain untuk container.
+					</section>
+					<section>
+						Docker pertama kali dikembangkan oleh <b  style="color: #FFF">Solomon Hykes</b> sebagai project internal di <b  style="color: #FFF">dotCloud</b> bersama dengan beberapa koleganya seperti <b  style="color: #FFF">Andrea Luzzardi</b> dan <b  style="color: #FFF">Francois-Xavier Bourlet</b>.
+					</section>
+					<section>
+						Perilisan platform ini secara open-source dilakukan pada mei 2013 silam. Docker terus berkembang hingga memiliki ribuan orang yang berkontribusi membuatnya menjadi lebih baik.
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h1>Istilah dalam docker</h1>
+					</section>
+					<section>
+						<ul>
+							<li> Docker Deamon
+							</li>
+							<li>Docker Images
+							</li>
+							<li>Docker Container
+							</li>
+							<li>Docker Registry
+							</li>
+						</ul>
+					</section>
+					<section>
+						<img
+							src="img/architecture-docker.svg"
+							alt=""
+							style="background: transparent; border: 0; box-shadow: 0 0 0; width: 900px"
+							/>
+					</section>
+					<section>
+						<h2>Docker Daemon</h2>
+						Docker daemon berfungsi untuk membangun, mendistribusikan dan menjalankan container docker. User tidak dapat langsung menggunakan docker daemon, akan tetapi untuk menggunakan docker daemon maka user menggunakan docker client sebagai perantara atau cli.
+					</section>
+					<section>
+					<h2>Docker Images</h2>
+						Docker images adalah sebuah template yang bersifat read only. Template ini sebenarnya adalah sebuah OS atau OS yang telah diinstall berbagai aplikasi. Docker images berfungsi untuk membuat docker container, dengan hanya 1 docker images kita dapat membuat banyak docker container.
+					</section>
+					<section>
+						<h2>Docker Container</h2>
+						Docker container bisa dikatakan sebagai sebuah folder, dimana docker container ini dibuat dengan menggunakan docker daemon. Setiap docker container disimpan maka akan terbentuk layer baru tepat diatas docker images atau base image diatasnya.
+					</section>
+					<section>
+						<h2>Docker Registry</h2>
+						Docker registry adalah kumpulan docker image yang bersifat private maupun public yang dapat anda akses di docker hub. Dengan menggunakan docker registry, anda dapat menggunakan docker image yang telah dibuat oleh developer yang lain, sehingga mempermudahkan kita dalam pengembangan aplikasi.
+					</section>
+					<section>
+						<img
+							src="img/linux-docker.svg"
+							alt=""
+							style="background: transparent; border: 0; box-shadow: 0 0 0; width: 300px"
+							/>
+							<img
+								src="img/mac-docker.svg"
+								alt=""
+								style="background: transparent; border: 0; box-shadow: 0 0 0; width: 300px"
+								/>
+								<img
+									src="img/win-docker.svg"
+									alt=""
+									style="background: transparent; border: 0; box-shadow: 0 0 0; width: 300px"
+									/>
+					</section>
+					<section>
+						<video width="500" controls>
+						  <source src="video/what.mp4" type="video/mp4">
+						</video>
+					</section>
+				</section>
+
+				<section data-background-transition="zoom">
+					<img src="img/questions.jpg" alt="">
+				</section>
+
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/search/search.js', async: true },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					{ src: 'plugin/notes/notes.js', async: true }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
