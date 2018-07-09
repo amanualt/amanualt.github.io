@@ -1,0 +1,504 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>PRA SKRIPSI</title>
+
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Hakim El Hattab">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/black.css" id="theme">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<h5>ANALISIS PERBANDINGAN PERFORMANSI PADA LAYANAN CLOUD AWS EC2 DAN ALIBABA ECS UNTUK IMPLEMENTASI CONTAINER</h5>
+					<img
+						src="img/akakom1.png"
+						alt=""
+						style="background: transparent; border: 0; box-shadow: 0 0 0; width: 300px"
+					/>
+					<p>
+						<small>
+							Oleh: </br> <a>Amanu Alatibi</a></br>135410203
+						</small>
+					</p>
+				</section>
+
+				<section data-background="#ccae62" data-background-transition="convex">
+					<section>
+						<p>
+							<h2>Latar Belakang</h2>
+						</p>
+					</section>
+					<section>
+						<p style="text-align:justify;">Perkembangan dunia informasi hingga saat ini semakin berkembang dengan cepat. Perkembangan pesat teknologi
+							internet dapat dicerminkan oleh  meningkatnya jumlah pengguna internet. Diambil dari laman web kominfo.go.id presentase pengguna internet
+							indonesia menempati posisi ke enam dunia dengan jumlah pengguna mencapai 123.0 juta orang pada 2018. Diperkirakan sebanyak 3,6 miliar manusia
+							di bumi bakal mengakses internet setidaknya sekali tiap bulan.</p>
+					</section>
+					<section>
+						<p style="text-align:justify;">Sistem informasi berupa website dalam melakukan semua urusan bisnisnya, memerlukan server yang handal dalam
+							pemrosesan. Seiring dengan berkembangnya layanan <i>cloud</i> IaaS maka semakin banyak pilihan dari perusahaan	penyedia layanan tersebut. Salah satu
+							mekanisme untuk lebih mengoptimalkan penggunaan sumber daya yang ada adalah dengan memanfaatkan teknologi Container.
+							Tidak seperti virtualisasi mesin, container tidak menggunakan hardware untuk virtualisasi.</p>
+					</section>
+				</section>
+
+				<section data-background="#40739e" data-background-transition="fade">
+					<section>
+						<h2>Rumusan Masalah</h2>
+					</section>
+					<section>
+						<p style="text-align:justify;">Dari latar belakang masalah yang diulas sebelumnya, maka rumusan masalah dalam penelitian ini yaitu bagaimana perbandingan performa docker
+						yang berjalan pada dua layanan <i>cloud</i> IaaS: AWS EC2 dan Alibaba ECS.</p>
+
+					</section>
+				</section>
+
+				<section data-background="#636e72" data-background-transition="slide">
+					<section>
+						<h2>Ruang Lingkup</h2>
+					</section>
+
+					<section>
+						<p  style="text-align:left;">Berdasarkan rumusan masalah maka dibuat beberapa ruang lingkup permasalahan meliputi:</p>
+						<ul>
+							<li>CMS(<i>Content Management Sistem</i>) dan Database yang digunakan hanya sebagai simulasi tidak termasuk dalam pembahasan.</li>
+						</ul>
+						<ul>
+							<li>Parameter yang dianalisis adalah <i>response time, request http, throughput, memory</i> dan <i>processor.</i></li>
+						</ul>
+						<ul>
+							<li>Sisi <i>security</i> atau keamanan yang mencakup sistem operasi, web server, maupun website  yang digunakan dalam penelitian ini tidak termasuk dalam pembahasan.</li>
+						</ul>
+
+					</section>
+				</section>
+
+				<section  data-background="#121738" data-background-transition="zoom">
+					<section>
+						<h2>Tujuan Penelitian</h2>
+					</section>
+					<section>
+							<p  style="text-align:justify;">Tujuan yang ingin dicapai dari penelitian ini adalah untuk membandingakan performa dari docker yang berjalan pada
+								dua layanan <i>cloud</i> IaaS: AWS EC2 dan Alibaba ECS.</p>
+					</section>
+				</section>
+
+				<section data-background="#0a3d62" data-background-transition="concave">
+					<section>
+							<h2>Manfaat Penelitian</h2>
+					</section>
+					<section>
+						<p style="text-align:justify;">Penelitian ini diharapkan dapat menjadi bahan referensi untuk  pemilihan layanan <i>cloud</i> yang akan di gunakan.</p>
+					</section>
+				</section>
+
+				<section data-background="#2c3e50" data-background-transition="slide">
+					<section>
+							<h2>Tinjauan Pustaka</h2>
+					</section>
+					<section>
+						<p style="text-align:justify;">Penelitian yang dilakukan oleh <a href="#">Sanjay P. Ahuja dan Niharika Deval</a>, (2018) Tentang Evaluasi Kinerja <i>IaaS Cloud
+							Services</i> Dengan Benchmark Tingkat Sistem. Penelitian tersebut membandingkan beberapa <i>provider</i> IaaS: Amazon EC2, Google Compute Engine,
+							Microsoft Azure dan IBM Softlayer, dengan menggunakan metode benchmarking  untuk mengukur kinerja server, kinerja <i>file</i> I/O, kinerja jaringan,
+							dan kinerja <i>variability</i> dari ke empat provider.</p>
+					</section>
+					<section>
+						<p style="text-align:justify;">Penelitian yang dilakukan oleh <a href="#">Ida Sofiana</a>, (2012) Tentang perbandingan kinerja sistem virtualisasi dan
+							layanan <i>Cloud Computing</i>. Penelitian tersebut membandingkan antara mesin virtual dan layanan <i>cloud computing</i> berdasarkan biaya, proses setup
+							sistem, sumber daya yang dibutuhkan, serta kinerja (proses login, kirim dan baca e-mail, kirim dan baca e-mail dengan attachment). </p>
+					</section>
+					<section>
+						<p style="text-align:justify;">Penelitian yang di lakukan oleh <a href="#">Vishaka Balasubramanian Sekar</a>, dkk (2017) tentang Perbandingan Platform  Docker
+							Container hosting AWS EC2 dengan Joyent’s Triton. Pada penelitian tersebut membandingan  kinerja, keamanan, biaya, dan alat dari dua penyedia
+							<i>cloud</i>, membandingkan docker yang di hosting di VM dan docker di tirton, dan Membandingkan Docker vs KVM dalam hal latensi dan penggunaan
+							CPU untuk server web dan menyimpulkan bahwa Docker adalah alternatif yang ringan dan berkinerja tinggi untuk KVM.</p>
+					</section>
+					<section>
+						<p style="text-align:justify;">Penelitian yang di lakukan oleh <a href="#">M. Agung Nugroho, M.Kom</a> dan <a href="#">Rikie Katardi</a>, (2018)
+							Tentang analisis kinerja penerapan container untuk load balancing web server pada raspberry pi. Pada penelitian tersebut menguji beban <i>request</i>
+							terhadap <i>singel container</i> dan	<i>multi container</i> untuk membandingkan kinerjanya.</p>
+					</section>
+					<section>
+						<p style="text-align:justify;">Penelitian yang dilakukan oleh <a>Handik Yanwar Efendi</a>, (2017) tentang uji performa linux container docker untuk
+							deployment aplikasi berbasis web. Pada penelitian tersebut mengimplementasikan penggunaan docker pada website  yang menggunakan
+							<i>Content Management System</i> untuk melakukan pengujian kompatibilitas docker pada aplikasi berbasis website yang telah dibangun pada
+							Platform  dan lingkungan host yang berbeda.</p>
+					</section>
+					<section>
+						<p style="text-align:justify;">Penelitian yang dilakukan oleh <a href="#">Addri Pershance And Taga</a>, (2017) tentang rancang bangun web hosting menggunakan
+							docker container dan clustering pada CoreOS: docker container. Pada penelitian tersebut mengimplementasikan aplikasi berbasis web menggunakan
+							docker dan melakukan pengujian terhadap efektifitas docker sebagai software virtualisasi modern dalam penggunaan sumber daya penyimpanan dan
+							memory .</p>
+					</section>
+				</section>
+
+				<section data-background="#c26b6a" data-background-transition="fade">
+					<section>
+						<h2>Metode Analisa</h2>
+					</section>
+					<section>
+						<p style="text-align:justify;">Penelitian ini bertujuan untuk menentukan kinerja dari docker yang berjalan di layanan IaaS tertentu. Metode
+							benchmarking  yang di usulkan diuji pada docker yang berjalan pada dua layanan cloud IaaS: Amazon EC2 dan Alibaba ECS.</p>
+					</section>
+				</section>
+
+				<section data-background="#2c3e50" data-background-transition="convex">
+					<section>
+						<h2>Perangkat Lunak</h2>
+					</section>
+					<section style="text-align:left;">
+						<p>Kebutuhan Perangkat lunak untuk penelitian ini adalah sebagai berikut:</p>
+							<ul>
+								<li>Sistem Operasi Linux Ubuntu server 16.04.</li>
+							</ul>
+							<ul>
+								<li>Sistem Operasi Ubuntu 18.04 digunakan sebagai tester.</li>
+							</ul>
+							<ul>
+								<li>Docker.</li>
+							</ul>
+							<ul>
+								<li>Apache Benchmark sebagai pemberi beban.</li>
+							</ul>
+							<ul>
+								<li>Sysbench sebagai testing <i>prosessor</i> dan <i>memory</i>.</li>
+							</ul>
+					</section>
+
+					<section>
+						<h2>perangkat keras</h2>
+					</section>
+					<section>
+						<p><a href="#"><i>Instances Cloud Providers</i> 1cpu dan 2gb ram</a></p>
+						<table>
+							<tr>
+								<td><i>IaaS Cloud Platforms</i></td>
+								<td>CPU</td>
+								<td>RAM</td>
+							</tr>
+							<tr>
+								<td>Amazon EC2</td>
+								<td>1</td>
+								<td>2 GB</td>
+							</tr>
+							<tr>
+								<td>Alibaba ECS</td>
+								<td>1</td>
+								<td>2 GB</td>
+							</tr>
+						</table>
+					</section>
+					<section>
+						<p><a href="#"><i>Instances Cloud Providers</i> 2cpu dan 4gb ram</a></p>
+						<table>
+							<tr>
+								<td><i>IaaS Cloud Platforms</i></td>
+								<td>CPU</td>
+								<td>RAM</td>
+							</tr>
+							<tr>
+								<td>Amazon EC2</td>
+								<td>2</td>
+								<td>4 GB</td>
+							</tr>
+							<tr>
+								<td>Alibaba ECS</td>
+								<td>2</td>
+								<td>4 GB</td>
+							</tr>
+						</table>
+					</section>
+				</section>
+
+				<section data-background="#182C61" data-background-transition="zoom">
+					<section>
+						<h2>Teknik Pengumpulan Data</h2>
+					</section>
+					<section>
+						<p style="text-align:justify;">Pengumpulan data menggunakan perangkat lunak Apache Benchmark (AB). Apache Benchmark adalah <i>tools</i> untuk mengukur performance apache,
+							dengan ab kita dapat melihat kapabilitas apache untuk melayani <i>request</i>  dari client  dan Sysbench adalah <i>tools</i> untuk mengukur performansi
+							(<i>prosessor</i> dan <i>memory</i>) dari masing-masing mesin.</p>
+					</section>
+				</section>
+
+				<section data-background="#84817a" data-background-transition="fade">
+					<section>
+						<h2>Rancangan Sistem</h2>
+					</section>
+					<section>
+						<p style="text-align:justify;">Dalam membuat sistem penelitian ini penulis akan menggunkan 4 buah <i>virtual private server</i> yang di bagi menjadi 2 bagian untuk pengujian yaitu
+							dua server dengan spesifikasi 1 cpu, 2gb ram dan dua server dengan spesifikasi 2 cpu, 4 gb ram. Keempat server ini akan di install menggunakan os
+							Linux Ubuntu 16.04 dan pada masing-masing server akan di install docker. Selanjutnya pada web penulis menggunakan aplikasi wordpress berita yang
+							sudah jadi dan berjalan diatas aplikasi docker.</p>
+					</section>
+				</section>
+
+				<section data-background="#cc8e35" data-background-transition="slide">
+					<section>
+						<h2>Sekenario Uji Coba</h2>
+					</section>
+					<section>
+						<p style="text-align:justify;">Uji coba ini menggunkan 2 buah spesifikasi server yang berbeda dimana pada instance 1 menggunakan 1cpu, 2gb ram dan
+							pada instance 2 menggunakan 2cpu, 4gb ram. Pada percobaan ini melakukan pengukuran dalam 3 jenis <i>request</i>  yaitu, 10.000 <i>request</i> , 15.000 <i>request</i> ,
+							dan 25.000 <i>request</i>  pada <i>nstance</i> 1, sedangkan untuk pengukuran <i>nstance</i> 2 yaitu, 15.000 <i>request</i>, 25.000 <i>request</i>  dan 35.000 <i>request</i>.</p>
+					</section>
+					<section>
+						<p style="text-align:justify;">Pengujian dilakukan di 3 tempat yang berbeda (PT.Era System Digital, STMIK AKAKOM, dan Indihome rumah) sebagai uji test. Untuk percobaan
+							terhadap <i>prosessor</i> diberikan beban sebesar 10000 dan <i>memory</i> diberikan beban sebesar 100G dengan menggunakan aplikasi sysbench.</p>
+					</section>
+				</section>
+
+				<section data-background="#371722" data-background-transition="concave">
+					<section>
+						<h2>Rancangan Pembebanan</h2>
+					</section>
+					<section style="font-size:30px;">
+						<p style="text-align:left;">Detail skenario pada 1 cpu dan 2gb memori yang akan di lakukan</p>
+						<table>
+							<tr>
+								<td>Uji Coba ke-</td>
+								<td>Sekenario</td>
+							</tr>
+							<tr>
+								<td>1</td>
+								<td>10.000 <i>request</i> , 50 <i>concurrent</i></td>
+							</tr>
+							<tr>
+								<td>2</td>
+								<td>10.000 <i>request</i> , 100 <i>concurrent</i></td>
+							</tr>
+							<tr>
+								<td>3</td>
+								<td>10.000 <i>request</i> , 150 <i>concurrent</i></td>
+							</tr>
+							<tr>
+								<td>4</td>
+								<td>15.000 <i>request</i> , 50 <i>concurrent</i></td>
+							</tr>
+							<tr>
+								<td>5</td>
+								<td>15.000 <i>request</i> , 100 <i>concurrent</i></td>
+							</tr>
+							<tr>
+								<td>6</td>
+								<td>15.000 <i>request</i> , 150 <i>concurrent</i></td>
+							</tr>
+							<tr>
+								<td>7</td>
+								<td>25.000 <i>request</i> , 50 <i>concurrent</i></td>
+							</tr>
+							<tr>
+								<td>8</td>
+								<td>25.000 <i>request</i> , 100 <i>concurrent</i></td>
+							</tr>
+							<tr>
+								<td>9</td>
+								<td>25.000 <i>request</i> , 150 <i>concurrent</i></td>
+							</tr>
+						</table>
+					</section>
+					<section style="font-size:30px;">
+						<p style="text-align:justify;">Detail skenario pada 2 cpu dan 4gb memori yang akan di lakukan</p>
+						<table>
+							<tr>
+								<td>Uji Coba ke-</td>
+								<td>Sekenario</td>
+							</tr>
+							<tr>
+								<td>1</td>
+								<td>15.000 <i>request</i> , 100 <i>concurrent</i></td>
+							</tr>
+							<tr>
+								<td>2</td>
+								<td>15.000 <i>request</i> , 200 <i>concurrent</i></td>
+							</tr>
+							<tr>
+								<td>3</td>
+								<td>15.000 <i>request</i> , 300 <i>concurrent</i></td>
+							</tr>
+							<tr>
+								<td>4</td>
+								<td>25.000 <i>request</i> , 100 <i>concurrent</i></td>
+							</tr>
+							<tr>
+								<td>5</td>
+								<td>25.000 <i>request</i> , 200 <i>concurrent</i></td>
+							</tr>
+							<tr>
+								<td>6</td>
+								<td>25.000 <i>request</i> , 300 <i>concurrent</i></td>
+							</tr>
+							<tr>
+								<td>7</td>
+								<td>35.000 <i>request</i> , 100 <i>concurrent</i></td>
+							</tr>
+							<tr>
+								<td>8</td>
+								<td>35.000 <i>request</i> , 200 <i>concurrent</i></td>
+							</tr>
+							<tr>
+								<td>9</td>
+								<td>35.000 <i>request</i> , 300 <i>concurrent</i></td>
+							</tr>
+						</table>
+					</section>
+				</section>
+
+				<section data-background="#485460" data-background-transition="fade">
+					<section>
+						<h2>Pelaksanaan Pengujian</h2>
+					</section>
+					<section>
+						<p style="text-align:justify;">Pelaksanaan pengujian untuk mendapatkan nilai dari <i> throughput, response time</i> dan <i>request http</i> penulis menggunaka aplikasi apache benchmark
+							dengan perintah seperti berikut:</br>
+								<a style="font-family:Courier New;"># ab -n [jumlah request] -c [jumlah concurrent] [http://hostname[:port]/path]</a></br>
+								Opsi <a href="#">-n</a> menentukan berapa kali URL tersebut diakses, sedangkan opsi <a href="#">-c</a> menentukan jumlah URL yang diakses dalam waktu bersamaan, kemudian
+								diikuti dengan URL dari aplikasi yang ingin diuji.</p>
+					</section>
+					<section>
+						<p style="text-align:justify;">Dan menghasilkan beberapa output sperti: </br>
+							<ul>
+								<li><a href="#">Requests per second:</a> Jumlah permintaan per detik. Nilai ini adalah hasil dari membagi jumlah permintaan dengan total waktu yang diambil.</li>
+							</ul>
+							<ul>
+								<li><a href="#">Time per request:</a> Waktu rata-rata yang dihabiskan untuk setiap permintaan.</li>
+							</ul>
+							<ul>
+								<li><a href="#">Transfer rate:</a> Tingkat transfer dihitung dengan rumus total baca / 1024 / waktu yang dibutuhkan.</li>
+							</ul>
+						</p>
+					</section>
+
+					<section>
+						<p style="text-align:justify;">Pelaksanaan pengujian untuk mendapatkan nilai dari <i>prosessor</i> penulis menggunaka aplikasi Sysbench dengan
+							 perintah seperti berikut:</br>
+							 <a style="font-family:Courier New;"># sysbench --test=cpu --cpu-max-prime=10000 run</a></br>
+							 Opsi <a style="font-family:Courier New;">--test=cpu</a> digunakan hanya untuk pengetesan terhadap cpu, sedangkan opsi <a style="font-family:Courier New;">--cpu-max-prime</a>
+							  menentukan jumlah maksimal dari pembebanan cpu.
+						 </p>
+					</section>
+					<section>
+						<p style="text-align:justify;">Pelaksanaan pengujian untuk mendapatkan nilai dari <i>memory</i> penulis menggunaka aplikasi Sysbench dengan
+							 perintah seperti berikut:</br>
+							 <a style="font-family:Courier New;"># sysbench --test=memory --memory-total-size=100G run</a></br>
+							 Opsi <a style="font-family:Courier New;">--test=memory</a> digunakan hanya untuk pengetesan terhadap memory, sedangkan opsi <a style="font-family:Courier New;">--memory-total-size</a>
+							  menentukan jumlah maksimal dari pembebanan memory.
+						</p>
+					</section>
+					<section>
+						<p style="text-align:justify;">Dari kedua perintah sysbench nantinya terdapat salah satu output yang akan dimasukkan yaitu:</br>
+							<ul>
+								<li><a href="#">Total time:</a> Jumlah waktu yang dihasilkan dari setiap permintaan.</li>
+							</ul>
+						</p>
+					</section>
+				</section>
+
+				<section data-background="#89937a" data-background-transition="zoom">
+					<section>
+						<h2>perancangan sistem</h2>
+					</section>
+					<section>
+						<p  style="text-align:justify;">Untuk merancang sistem ini penulis menggunakan docker didalam VPS sebagai sarana untuk melakukan pengujian. Berikut topologinya:</p>
+							<img
+								src="img/topologi.png"
+								alt=""
+								style="background: none; border: 0; box-shadow: 0 0 0; width: 800px"
+							/>
+					</section>
+					<section>
+						<p style="text-align:justify;">Dapat dilihat pada gambar diatas seorang tester merequest  ke server VPS yang dalam hal ini penulis menggunakan docker, tester akan memberikan banyak request  dengan tools Apache Benchmark.</p>
+					</section>
+				</section>
+
+				<section data-background="#1f3b34" data-background-transition="slide">
+					<section>
+						<h2>Rancangan Web</h2>
+					</section>
+					<section>
+						<p style="text-align:justify;">Pada penelitian ini penulis menggunakan wordpress berita sebagai isi dalam docker.</p>
+						<img
+							src="img/web.png"
+							alt=""
+							style="background: none; border: 0; box-shadow: 0 0 0; width: 800px"
+						/>
+					</section>
+					<section>
+						<p style="text-align:justify;">Pada gambar diatas merupakan halaman utama web, halaman tersebut bisa diakses user saat membuka browser dan memanggil alamat public ip dari masing-masing layanan cloud. Hasil tampilan yang akan dilihat oleh user ini merupakan kondisi dari front-end.</p>
+					</section>
+				</section>
+
+				<section data-background="#fff">
+					<img
+						src="img/selesai.gif"
+						alt=""
+						style="background: none; border: 0; box-shadow: 0 0 0; width: 600px"
+					/>
+				</section>
+
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/search/search.js', async: true },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					{ src: 'plugin/notes/notes.js', async: true }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
